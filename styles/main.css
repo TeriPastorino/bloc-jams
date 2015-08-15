@@ -32,6 +32,16 @@ body.landing {
   margin: 0 auto;
   max-width: 64rem;
 }
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
  
  /* Medium and small screens (640px) i.e. tablets/smaller phones */
  @media (min-width: 40rem) {
