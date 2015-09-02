@@ -1,4 +1,4 @@
-//var animatePoints = function() {
+var animatePoints = function() {
 
   var points = document.getElementsByClassName('point');
 
@@ -11,8 +11,8 @@
     };
   };
 
-  revealPoints();
-
+  revealPoints(points);
+}
 
 //refactor these to be a single function called revealPoints that takes a single argument points
 //need for loop 
