@@ -1,6 +1,7 @@
-var animatePoints = function() {
 
-  var points = document.getElementsByClassName('point');
+var pointsArray = document.getElementsByClassName('point');
+
+var animatePoints = function(points) {
 
   var revealPoints = function (points) {
     for (var i = 0; i < points.length; i++) {
@@ -12,7 +13,20 @@ var animatePoints = function() {
   };
 
   revealPoints(points);
+  
 }
+
+window.onload = function() {
+  if (window.innerHeight > 950) {
+    animatePoints(pointsArray);
+  }
+    window.addEventListener('scroll', function(event) {
+      
+      if (pointsArray[0].getBoundingClientRect().top <= 500) {
+             animatePoints(pointsArray);
+         }
+    });
+  }
 
 //refactor these to be a single function called revealPoints that takes a single argument points
 //need for loop 
