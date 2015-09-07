@@ -95,25 +95,8 @@ var setCurrentAlbum = function(album) {
      //setup function(event)
      setCurrentAlbum(albumCoverList[i]);
      i++;
-     if (index == albumCoverList.length) {
-       index = 0;
+     if (i == albumCoverList.length) {
+       i = 0;
      }  
    });   
  };  
-                                                                         ;
-  
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
