@@ -99,7 +99,7 @@ var setCurrentAlbum = function(album) {
 
     var findParentByClassName = function(element, target) {
       var currentParent = element.parentElement;
-   
+    
      
       while (currentParent.className !=  target) {
    
