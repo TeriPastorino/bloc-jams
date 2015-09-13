@@ -116,8 +116,8 @@ var setCurrentAlbum = function(album) {
 };
    
   //where does this get inserted?
-    var getSongItem = function(element){
-      switch (element.className){
+    var getSongItem = function(element) {
+      switch (element.className) {
           //looking for elements
         case 'album-song-button':
         case 'ion-play':
@@ -169,8 +169,8 @@ var setCurrentAlbum = function(album) {
         var songItem = getSongItem(event.target);
           if songItem.getAttribute('data-song-number') !== (currentlyPlayingSong) {
             songItem.innerHTML = playButtonTemplate;
-        }
-        changing innerHTML of the Element
+          }
+       
         }
     });
     
