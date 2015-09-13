@@ -167,10 +167,10 @@ var setCurrentAlbum = function(album) {
         // change the content from the number to the playbutton's HTML
         
         var songItem = getSongItem(event.target);
-          if songItem.getAttribute('data-song-number') !== (currentlyPlayingSong) {
+          if (songItem.getAttribute('data-song-number') !== (currentlyPlayingSong)) {
             songItem.innerHTML = playButtonTemplate;
         }
-        changing innerHTML of the Element
+        //changing innerHTML of the Element
         }
     });
     
