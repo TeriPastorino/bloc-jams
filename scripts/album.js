@@ -169,8 +169,7 @@ var setCurrentAlbum = function(album) {
         var songItem = getSongItem(event.target);
           if (songItem.getAttribute('data-song-number') !== (currentlyPlayingSong)) {
             songItem.innerHTML = playButtonTemplate;
-
-
+        }
         }
     });
     
