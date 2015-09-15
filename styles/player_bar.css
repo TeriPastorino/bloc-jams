@@ -94,7 +94,6 @@
 
 .seek-control .current-time {
   position: absolute;
-  right: 0;
   top:  0.5rem;
 }
 
@@ -189,7 +188,7 @@
    }
  }
 
-.palyer-bar .currently-playing {
+.player-bar .currently-playing {
   width: 25%;
   text-align: center;
   position: relative;
