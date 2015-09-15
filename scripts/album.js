@@ -83,7 +83,6 @@ var setCurrentAlbum = function(album) {
  };
 
   //var declared outside of window.onload
-  var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
   var songRows = document.getElementsByClassName('album-view-song-item');
 
   var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
@@ -97,7 +96,7 @@ var setCurrentAlbum = function(album) {
     
     //CP27 Adding Song Number to Pause button. trying to track what was selected?
 
-    var findParentByClassName = function(element, target) {
+    var findParentByClassName = function(element, targetClass) {
       var currentParent = element.parentElement;
    //add condition to check if an ancestor with specified name doesn't exist
      if (element.parentNode === null) {
@@ -106,7 +105,7 @@ var setCurrentAlbum = function(album) {
 
       //check to see if starting element has a parent
 
-      while (currentParent.className !=  target) {
+      while (currentParent.className !=  targetClass) {
         if (currentParent === null) {
           alert("No Parent found with that class name");
         }
@@ -117,6 +116,7 @@ var setCurrentAlbum = function(album) {
    
   //where does this get inserted?
     var getSongItem = function(element) {
+      console.log(element.className)
       switch (element.className) {
           //looking for elements
         case 'album-song-button':
@@ -124,15 +124,14 @@ var setCurrentAlbum = function(album) {
         case 'ion-pause':
           return findParentByClassName(element,'song-item-number');
         case 'album-view-song-item':
-          return element.querySelector('.song-item-number');
-        case '.song-item-title':
-        case '.song-item-duration':
-          return findParentByClassName(element, 'album-view-song-item').querySelector('.song-item-number');
-        case '.song-item-number':
+          return element.querySelector('song-item-number');
+        case 'song-item-title':
+        case 'song-item-duration':
+          return findParentByClassName(element, 'album-view-song-item').querySelector('song-item-number');
+        case 'song-item-number':
           return element;
         default:
           return;
-
       }
     };
     
@@ -157,31 +156,40 @@ var setCurrentAlbum = function(album) {
         currentlyPlayingSong = songItem.getAttribute('data-song-number');
       }
     };
+    
+  var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
 
     //elements to which we will be adding listeners
     
-    songListContainer.addEventListener('mouseover', function (event) {
+    songListContainer.addEventListener('mouseover', function(event) {
         //only target indivedual song rows during event delegation
         if (event.target.parentElement.className === "album-view-song-item") {
-            event.target.parentElement.querySelector(".song-item-number").innerHTML = playButtonTemplate;
+
+          event.target.parentElement.querySelector(".song-item-number").innerHTML = playButtonTemplate;
         // change the content from the number to the playbutton's HTML
         
         var songItem = getSongItem(event.target);
+<<<<<<< HEAD
+=======
+          console.log(songItem);
+>>>>>>> CP28
           if (songItem.getAttribute('data-song-number') !== (currentlyPlayingSong)) {
             songItem.innerHTML = playButtonTemplate;
         }
         }
     });
     
-    for (var i = 0; i < songRows.length; i++) {
-        songRows[i].addEventListener('mouseleave', function (event) {
+    for (i = 0; i < songRows.length; i++) {
+        songRows[i].addEventListener('mouseleave', function(event) {
           //cache the song item
+          //add console.log statements to debug event.target
           var leavingSongItem = getSongItem(event.target);
+          console.log(event.target);
           var leavingSongItemNumber = leavingSongItem.getAttribute('data-song-number');
         
           //change content if mouseleave != current song
           
-          if (leavingSongItem !== currentlyPlayingSong) {
+          if (leavingSongItemNumber !== currentlyPlayingSong) {
             leavingSongItem.innerHTML = leavingSongItemNumber;
           }
         });
