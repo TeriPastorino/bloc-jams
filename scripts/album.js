@@ -83,7 +83,6 @@ var setCurrentAlbum = function(album) {
  };
 
   //var declared outside of window.onload
-  var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
   var songRows = document.getElementsByClassName('album-view-song-item');
 
   var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
@@ -133,7 +132,6 @@ var setCurrentAlbum = function(album) {
           return element;
         default:
           return;
-
       }
     };
     
@@ -158,6 +156,8 @@ var setCurrentAlbum = function(album) {
         currentlyPlayingSong = songItem.getAttribute('data-song-number');
       }
     };
+    
+  var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
 
     //elements to which we will be adding listeners
     
@@ -177,7 +177,7 @@ var setCurrentAlbum = function(album) {
         }
     });
     
-    for (var i = 0; i < songRows.length; i++) {
+    for (i = 0; i < songRows.length; i++) {
         songRows[i].addEventListener('mouseleave', function(event) {
           //cache the song item
           //add console.log statements to debug event.target
@@ -187,7 +187,7 @@ var setCurrentAlbum = function(album) {
         
           //change content if mouseleave != current song
           
-          if (leavingSongItem !== currentlyPlayingSong) {
+          if (leavingSongItemNumber !== currentlyPlayingSong) {
             leavingSongItem.innerHTML = leavingSongItemNumber;
           }
         });
