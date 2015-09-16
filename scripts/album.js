@@ -168,10 +168,7 @@ var setCurrentAlbum = function(album) {
         // change the content from the number to the playbutton's HTML
         
         var songItem = getSongItem(event.target);
-<<<<<<< HEAD
-=======
-          console.log(songItem);
->>>>>>> CP28
+
           if (songItem.getAttribute('data-song-number') !== (currentlyPlayingSong)) {
             songItem.innerHTML = playButtonTemplate;
         }
