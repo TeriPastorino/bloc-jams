@@ -1,115 +1,125 @@
 body.album {
-  background-image: url(../assets/images/blurred_backgrounds/blur_bg_3.jpg);
-  background-repeat: repeat-y;
-  background-position: center center;
-  background-size: cover;
-  padding-bottom: 150px;
+    background-image: url(../assets/images/blurred_backgrounds/blur_bg_3.jpg);
+    background-repeat: repeat-y;
+    background-position: center center;
+    background-size: cover;
+    padding-bottom: 150px;
 }
-
+ 
 .album-cover-art {
-  position: relative;
-  left: 20%;
-  margin-top: 1rem;
-  width: 60%;
+    position: relative;
+    left: 20%;
+    margin-top: 1rem;
+    width: 60%;
+    cursor: pointer;
 }
-
+ 
+.album-view-details {
+    position: relative;
+    top: 1.5rem;
+    padding: 1rem;
+}
+ 
 .album-view-details .album-view-title {
-  font-weight: 300;
-  font-size: 2rem;
+    font-weight: 300;
+    font-size: 2rem;
 }
-
+ 
 .album-view-details .album-view-artist {
-  font-weight: 300;
-  font-size: 1.5rem;
+    font-weight: 300;
+    font-size: 1.5rem;
 }
-
+ 
 .album-view-details .album-view-release-info {
-  font-weight: 300;
-  font-size: 0.75rem;
+    font-weight: 300;
+    font-size: 0.75rem;
 }
-
-@media (max-width: 64rem) and (min-width: 20rem) {
-     body.album {
-         padding-bottom: 200px;
-     }
 
 .album-view-song-list {
-  width: 90%;
-  margin: 1.5rem auto;
-  font-weight: 300;
-  font-size: 0.75rem;
+    width: 90%;
+    margin: 1.5rem auto;
+    font-weight: 300;
+    font-size: 0.75em;
 }
-
+ 
 .album-view-song-item {
-  height: 3rem;
-  border-bottom: 1px solid rgba(255,255,255,0.5);
+    height: 3rem;
+    /* #1 */
+    border-bottom: 1px solid rgba(255,255,255,0.5);
 }
-
-/*fix formatting for thead*/
+ 
+.song-item-number {
+    width: 5%;
+}
+ 
 .song-item-title {
-  width: 85%;
+    width: 85%;
 }
-
+ 
 .song-item-duration {
-  width: 5%;
+    width: 5%;
 }
-
-/*album play button formmatting*/
 
 .album-song-button {
-     text-align: center;
-     font-size: 14px;
-     background-color: white;
-     color: rgb(210, 40, 123);
-     border-radius: 50% 50%;
-     display: inline-block;
-     width: 28px;
-     height: 28px;
- }
- 
- .album-song-button:hover {
-     cursor: pointer;
-     color: white;
-     background-color: rgb(210, 40, 123);
- }
- 
- .album-song-button span {
-     line-height: 28px;
- }
- 
- .album-song-button .fa-play {
-     padding-left: 5px;
- }
- 
- .album-song-listing td {
-     vertical-align: middle;
- }
-
- /* Centered text looks better on smaller devices */
- @media (max-width: 40rem) and (min-width: 20rem) {
+    text-align: center;
+    font-size: 14px;
+    background-color: white;
+    color: rgb(210, 40, 123);
+    border-radius: 50% 50%;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
 }
 
-.song-item-play-count {
-  
+.album-song-button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: rgb(210, 40, 123);
 }
 
-/*centered text for smaller devices*/
-@media (max-width: 40rem) and (min-width: 20rem){
-  
-  .album-view-details {
-    text-align: center
-  }
-  
-  .album-view-title {
-    margin-top: 0;
-  }
+.album-song-button i {
+    line-height: 28px;
 }
 
+.album-song-button .fa-play {
+    padding-left: 5px;
+}
+
+.album-song-listing td {
+/*    vertical-align: middle;*/
+    margin-top: 6px;
+
+}
+
+.ion-play {
+    vertical-align:  middle;
+}
+
+.ion-pause {
+    vertical-align: middle;
+}
+
+/* #2 */
+@media (max-width: 40rem) and (min-width: 20rem) {
+    .album-view-details {
+        text-align: center
+    }
+     
+    .album-view-title {
+        margin-top: 0;   
+    }
+}
+ 
+/* #3 */
 @media (max-width: 64rem) and (min-width: 20rem) {
-  .album-view-sont-list {
-    position: relative;
-    top: 1rem;
-    width: 80%;
-    margin: auto;
-  }
+    body.album {
+        padding-bottom: 200px;
+    }
+ 
+    .album-view-song-list {
+        position: relative;
+        top: 1rem;
+        width: 80%;
+        margin: auto;
+    }
 }
