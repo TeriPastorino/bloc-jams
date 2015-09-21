@@ -162,12 +162,37 @@ var previousSong = function () {
     $lastSongNumberCell.html(lastSongNumber);
 }
 
+var togglePlayFromPlayerBar = function() {
+
+  if (currentSoundFile) {
+    //somethign is currently paused
+    if(currentSoundFile.isPaused()) {
+    
+      //get the song that is currently playing 
+      //-play the song
+      //change the currently playing cell to play button
+      //change the player bar to play button
+    var currentlyPlayingCell = $('.song-item-number[data-song-number="' + currentlyPlayingSongNumber + '"]');
+      currentlyPlayingCell.html(pauseButtonTemplate);
+      $('.left-controls .play-pause').html(playerBarPauseButton);
+      currentSoundFile.play();
+    } else {
+    //song is playing
+    var currentlyPlayingCell = $('.song-item-number[data-song-number="' + currentlyPlayingSongNumber + '"]');     //pause button is clicked
+    //change html pause player bar to pause
+    //chang current playing song cell to pause
+    currentlyPlayingCell.html(playButtonTemplate);
+    $('.left-controls .play-pause').html(playerBarPlayButton);
+    currentSoundFile.pause();
+    } 
+  }  
+};
+
 var updatePlayerBarSong = function () {
     
     $('.currently-playing .song-name').text(currentSongFromAlbum.name);
     $('.currently-playing .artist-song-mobile').text(currentSongFromAlbum.name + ' - ' + currentAlbum.artist);
     $('.currently-playing .artist-name').text(currentAlbum.artist);
-    
     $('.left-controls .play-pause').html(playerBarPauseButton);
     
 };
