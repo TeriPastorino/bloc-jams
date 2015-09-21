@@ -218,12 +218,12 @@ var $previousButton = $('.left-controls .previous');
 var $nextButton = $('.left-controls .next');
 
 
-/*$(document).ready(function() {
-
+$(document).ready(function() {
    
     setCurrentAlbum(albumPicasso);
     $previousButton.click(previousSong);
     $nextButton.click(nextSong);
+    $playPauseButton.click(togglePlayFromPlayerBar);
     
     document.getElementsByClassName('album-cover-art')[0].addEventListener('click', function(){
         albumListCounter++;
@@ -231,9 +231,6 @@ var $nextButton = $('.left-controls .next');
             albumListCounter = 0;
         };
         setCurrentAlbum(albumList[albumListCounter]);
-    });
-
-     
-
+    });    
 });
-*/
+
