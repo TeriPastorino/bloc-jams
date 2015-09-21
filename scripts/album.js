@@ -72,15 +72,15 @@ var setCurrentAlbum = function (album) {
     var $albumImage = $('.album-cover-art');
     var $albumSongList = $('.album-view-song-list');
  
-    // #2
+    
     $albumTitle.text(album.name);
     $albumArtist.text(album.artist);
     $albumReleaseInfo.text(album.year + ' ' + album.label);
     $albumImage.attr('src', album.albumArtUrl);
  
-    // #3
+    
     $albumSongList.empty();
-    // #4
+    
     
     for (var i = 0; i < album.songs.length; i++) {
         var $newRow = createSongRow(i + 1, album.songs[i].name, album.songs[i].length);
@@ -106,7 +106,7 @@ var setSong = function (target) {
     currentlyPlayingSongNumber = parseInt(target + 1);
     currentSongFromAlbum = currentAlbum.songs[target];
     currentSoundFile = new buzz.sound(currentSongFromAlbum.audioUrl, {
-        // #2
+       
         formats: [ 'mp3' ],
         preload: true
     });
@@ -140,7 +140,7 @@ var nextSong = function (event) {
     $lastSongNumberCell.html(lastSongNumber);
 }
 
-var previousSong = function (event) {
+var previousSong = function () {
     
     var nextSongFromAlbum = currentlyPlayingSongNumber;
 
@@ -149,7 +149,8 @@ var previousSong = function (event) {
         indexOfPreviousSong = currentAlbum.songs.length - 1;
     }
     
-    setSong(indexOfNextSong)
+  // setsong indexOfNextSong vs. bloc content setSong(currentSongIndex + 1)
+    setSong(indexOfNextSong);
     currentSoundFile.play();
     updatePlayerBarSong();
 
