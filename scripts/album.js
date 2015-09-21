@@ -191,11 +191,9 @@ var currentVolume = 80;
 var $previousButton = $('.left-controls .previous');
 var $nextButton = $('.left-controls .next');
 
-<<<<<<< HEAD
+
 /*$(document).ready(function() {
-=======
-$(document).ready(function() {
->>>>>>> CP32
+
    
     setCurrentAlbum(albumPicasso);
     $previousButton.click(previousSong);
@@ -210,9 +208,6 @@ $(document).ready(function() {
     });
 
      
-<<<<<<< HEAD
+
 });
 */
-=======
-});
->>>>>>> CP32
