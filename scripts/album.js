@@ -307,10 +307,10 @@ var $previousButton = $('.left-controls .previous');
 var $nextButton = $('.left-controls .next');
 var $playPauseButton = $('.left-controls .play-pause');
 
-$(document).ready(function() {
+$(function() {
    
     setCurrentAlbum(albumPicasso);
-    setupSeekBars;
+    setupSeekBars();
     $previousButton.click(previousSong);
     $nextButton.click(nextSong);
     $playPauseButton.click(togglePlayFromPlayerBar);

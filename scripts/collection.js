@@ -18,9 +18,10 @@ var buildCollectionItemTemplate = function() {
   return $(template);
 };
 
-$(window).load = (function() {
+$(function() {
   
 var $collectionContainer = $('.album-covers .clearfix');
+  
   $collectionContainer.empty();
     for (var i=0; i < 12; i++) {
       var $newThumbnail = buildCollectionItemTemplate();
