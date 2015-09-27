@@ -1,12 +1,12 @@
 
 //add this updateSeekBarWhileSongPlays()
 var setCurrentTimeInPlayerBar = function(currentTime) {
-$('.current-time').text()
+$('.current-time').text(currentTime);
 
 }
 
 var setTotalTimeInPlayerBar = function(totalTime) {
-  .text() of element with the ('.total-time').class == length of the song
+  .text() of element with the ('.total-time').text(totalTime) == length of the song
   
 }
 
