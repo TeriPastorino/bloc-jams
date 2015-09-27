@@ -1,5 +1,6 @@
 var createSongRow = function (songNumber, songName, songLength) {
     
+  filterTimeCode(songLength);
     var template = 
           '<tr class="album-view-song-item">' 
         + '  <td class="song-item-number" data-song-number="' + songNumber + '">' + songNumber + '</td>'
@@ -347,7 +348,7 @@ var $playPauseButton = $('.left-controls .play-pause');
 
 //add this updateSeekBarWhileSongPlays()
 var setCurrentTimeInPlayerBar = function(currentTime) {
-$('.current-time').text(currentTime);
+$('.current-time').text(filterTimeCode(currentTime));
 
 }
 
@@ -356,10 +357,11 @@ var setTotalTimeInPlayerBar = function(totalTime) {
 }
 
 var filterTimeCode = function(timeInSeconds) {
-  //use parseFloat() to get seconds in a number form
-  // wholeSeconds = 
-  // wholeMinutes = 
-}
+  timeInSeconds = Math.floor(parseFloat(timeInSeconds) );
+  var wholeSeconds = timeInSeconds % 60;
+  var wholeMinutes = Math.floor(timeInSeconds/ 60);
+  return wholeMinutes + ":" + wholeSeconds;
+};
 
 $(function () {
 
